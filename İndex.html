@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QULIS | Cafe  · Bozyazı</title>
+    <meta name="description" content="Akdeniz esintisiyle harmanlanmış gurme lezzetler, seçkin kahveler ve zarif anlar. It's so good to be Qulis.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f5e6a8;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #edd892 50%, #aa820a 100%);
+            --bg-body: #08090b;
+            --bg-surface: #101216;
+            --bg-card: rgba(18, 21, 26, 0.7);
+            --border-subtle: rgba(212, 175, 55, 0.15);
+            --border-focus: rgba(212, 175, 55, 0.45);
+            --text-pure: #ffffff;
+            --text-soft: #c8cbd2;
+            --text-dim: #79808f;
+            --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-soft);
+            line-height: 1.7;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+            color: var(--text-pure);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.4rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 9, 11, 0.92);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .brand-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-soft);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-btn-gold {
+            border: 1px solid var(--gold);
+            padding: 0.55rem 1.6rem;
+            border-radius: 2px;
+            color: var(--gold) !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 2px !important;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .nav-btn-gold:hover {
+            background: var(--gold);
+            color: #000 !important;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(16, 18, 22, 0.7) 0%, rgba(8, 9, 11, 0.98) 100%),
+                        url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+        }
+
+        .hero-inner {
+            max-width: 860px;
+            z-index: 2;
+        }
+
+        .hero-pretitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            line-height: 1.15;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+            font-style: italic;
+        }
+
+        .hero h1 b {
+            font-style: normal;
+            font-weight: 600;
+            display: block;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-soft);
+            max-width: 620px;
+            margin: 0 auto 2.8rem;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-luxury {
+            padding: 0.9rem 2.4rem;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+            border-radius: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #08090b;
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background: #fff;
+            border-color: #fff;
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .btn-transparent {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: #fff;
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-transparent:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* --- AMBİYANS BÖLÜMÜ --- */
+        .ambiance-section {
+            padding: 6rem 8%;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+        }
+
+        .ambiance-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .ambiance-text .tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .ambiance-text h2 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .neon-quote {
+            font-family: 'Sacramento', cursive;
+            font-size: 2.8rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px var(--gold), 0 0 35px var(--gold);
+            display: block;
+            margin: 0.2rem 0 1.5rem;
+        }
+
+        .ambiance-text p {
+            color: var(--text-soft);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* MEDYA VİTRİNİ & TIKLANABİLİR KUTU */
+        .media-showcase-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .table-showcase-box {
+            position: relative;
+            height: 500px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-focus);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.15);
+            background: #14171d;
+            cursor: pointer;
+        }
+
+        .table-showcase-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            margin: 10px;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .table-showcase-box img, 
+        .table-showcase-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .table-showcase-box:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Sağ Üst Sabit Butonlar */
+        .media-controls-top {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 25;
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .media-action-btn {
+            background: rgba(8, 9, 11, 0.88);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.5rem 0.9rem;
+            font-size: 0.72rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .media-action-btn:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Küçük Önizlemeler (Thumbnails) */
+        .media-thumbnails {
+            display: flex;
+            gap: 0.8rem;
+            overflow-x: auto;
+            padding-bottom: 0.4rem;
+            scrollbar-width: thin;
+        }
+
+        .thumb-box {
+            width: 75px;
+            height: 65px;
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            flex-shrink: 0;
+            opacity: 0.6;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .thumb-box.active, .thumb-box:hover {
+            opacity: 1;
+            border-color: var(--gold);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-box.video-thumb::after {
+            content: '\f04b';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.45);
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        /* --- Section Header --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header .tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        .divider-gold {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            margin: 1.2rem auto 0;
+            opacity: 0.7;
+        }
+
+        /* --- Menü & Kategori Vitrini --- */
+        .menu-section {
+            padding: 6rem 8% 8rem;
+            background: var(--bg-body);
+        }
+
+        .category-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        .cat-box {
+            position: relative;
+            height: 150px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: var(--transition);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.2rem;
+        }
+
+        .cat-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(8, 9, 11, 0.5) 0%, rgba(8, 9, 11, 0.85) 100%);
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .cat-box:hover::before {
+            background: rgba(8, 9, 11, 0.45);
+        }
+
+        .cat-box:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+        }
+
+        .cat-box-title {
+            position: relative;
+            z-index: 2;
+            font-size: 1.25rem;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .cat-box:hover .cat-box-title {
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        /* --- Arama Kutusu --- */
+        .search-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .search-bar {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 1rem 1.6rem 1rem 3.2rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 2px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .search-bar input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        /* --- Menü Kartları --- */
+        .menu-category-block {
+            margin-bottom: 5rem;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2rem;
+        }
+
+        .category-header h3 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-header h3 span.gold-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .btn-return-all {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .btn-return-all:hover {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .menu-item-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 1.5rem 1.8rem;
+            border-radius: 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+
+        .menu-item-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold-gradient);
+            transition: var(--transition);
+        }
+
+        .menu-item-card:hover {
+            border-color: var(--border-focus);
+            background: rgba(22, 26, 33, 0.85);
+            transform: translateY(-3px);
+        }
+
+        .menu-item-card:hover::after {
+            width: 100%;
+        }
+
+        .item-details {
+            padding-right: 1.5rem;
+        }
+
+        .item-title {
+            font-size: 1.25rem;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.5px;
+            color: #fff;
+            margin-bottom: 0.35rem;
+            font-weight: 600;
+        }
+
+        .item-desc {
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .item-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            color: var(--gold);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* --- Lokasyon / İletişim --- */
+        .lounge-contact {
+            padding: 6rem 8%;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-row i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        .info-row strong {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-row p, .info-row a {
+            color: var(--text-dim);
+            font-size: 0.92rem;
+        }
+
+        .map-frame {
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            height: 380px;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(0.8) contrast(1.1) invert(0.9);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 3rem 8%;
+            text-align: center;
+            background: #050607;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            color: var(--text-dim);
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-soft);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .footer-socials a:hover {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 868px) {
+            header nav { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .ambiance-container { grid-template-columns: 1fr; gap: 2.5rem; }
+            .table-showcase-box { height: 420px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .category-showcase { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+            .cat-box { height: 110px; }
+            .cat-box-title { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand-logo">QULIS<span>.</span></div>
+        <nav>
+            <ul>
+                <li><a href="#ambiyans">Ambiyans</a></li>
+                <li><a href="#kategoriler">Koleksiyon</a></li>
+                <li><a href="#iletisim">Lokasyon</a></li>
+                <li><a href="https://www.instagram.com/quliscafe" target="_blank" class="nav-btn-gold"><i class="fa-brands fa-instagram"></i> @quliscafe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <p class="hero-pretitle"></p>
+            <h1><b>Seçkin Lezzetler</b>Akdeniz Esintisi</h1>
+            <p>Bozyazı'nın sahil hattında, usta şeflerin dokunuşlarıyla hazırlanan gurme lezzetler ve özenle kavrulmuş dünya kahveleriyle benzersiz bir deneyim.</p>
+            <div class="hero-actions">
+                <a href="#kategoriler" class="btn-luxury btn-gold"><i class="fa-solid fa-compass"></i> Menüyü İnceleyin</a>
+                <a href="https://www.instagram.com/quliscafe" target="_blank" class="btn-luxury btn-transparent"><i class="fa-brands fa-instagram"></i> Bizi Keşfedin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMBİYANS BÖLÜMÜ -->
+    <section class="ambiance-section" id="ambiyans">
+        <div class="ambiance-container">
+            <div class="ambiance-text">
+                <span class="tagline">Özel Bir Deneyim</span>
+                <h2>Masanızı Keşfedin</h2>
+                <div class="neon-quote">It's so good to be Qulis</div>
+                <p>Doğal ahşap panellerin sıcaklığı, yemyeşil sarmaşıkların ferahlığı ve göz alıcı neon imzamızla tasarlanmış konforlu köşeler... İster gün ortasında dingin bir espresso molası, ister sevdiklerinizle baş başa geçireceğiniz özel bir akşam için Bozyazı'nın en zarif masaları sizleri bekliyor.</p>
+                <a href="#kategoriler" class="btn-luxury btn-gold"><i class="fa-solid fa-utensils"></i> Lezzetleri Keşfet</a>
+            </div><!-- QULIS INSTAGRAM SLIDER SİSTEMİ -->
+<div class="qulis-slider-frame">
+  <div class="qulis-carousel" id="qulisCarousel">
+
+    <!-- 1. BÖLME: FOTOĞRAF 1 -->
+    <div class="qulis-slide" id="slide-1">
+      <div class="media-box">
+        <span class="empty-hint" id="hint-1">+ 1. Fotoğrafı Ekle</span>
+        <img id="img-view-1" style="display: none;">
+      </div>
+      <div class="admin-controls" id="ctrl-1">
+        <label for="input-f-1" class="admin-btn">Seç / Değiştir</label>
+        <button class="admin-btn btn-danger" onclick="clearMedia(1)">Kaldır</button>
+      </div>
+      <input type="file" id="input-f-1" accept="image/*" style="display: none;" onchange="uploadImage(this, 1)">
+      <span class="page-badge">1 / 4</span>
+    </div>
+
+    <!-- 2. BÖLME: FOTOĞRAF 2 -->
+    <div class="qulis-slide" id="slide-2">
+      <div class="media-box">
+        <span class="empty-hint" id="hint-2">+ 2. Fotoğrafı Ekle</span>
+        <img id="img-view-2" style="display: none;">
+      </div>
+      <div class="admin-controls" id="ctrl-2">
+        <label for="input-f-2" class="admin-btn">Seç / Değiştir</label>
+        <button class="admin-btn btn-danger" onclick="clearMedia(2)">Kaldır</button>
+      </div>
+      <input type="file" id="input-f-2" accept="image/*" style="display: none;" onchange="uploadImage(this, 2)">
+      <span class="page-badge">2 / 4</span>
+    </div>
+
+    <!-- 3. BÖLME: FOTOĞRAF 3 -->
+    <div class="qulis-slide" id="slide-3">
+      <div class="media-box">
+        <span class="empty-hint" id="hint-3">+ 3. Fotoğrafı Ekle</span>
+        <img id="img-view-3" style="display: none;">
+      </div>
+      <div class="admin-controls" id="ctrl-3">
+        <label for="input-f-3" class="admin-btn">Seç / Değiştir</label>
+        <button class="admin-btn btn-danger" onclick="clearMedia(3)">Kaldır</button>
+      </div>
+      <input type="file" id="input-f-3" accept="image/*" style="display: none;" onchange="uploadImage(this, 3)">
+      <span class="page-badge">3 / 4</span>
+    </div>
+
+    <!-- 4. BÖLME: VİDEO -->
+    <div class="qulis-slide" id="slide-4">
+      <div class="media-box">
+        <span class="empty-hint" id="hint-4">+ Videoyu Ekle</span>
+        <video id="vid-view-4" controls playsinline style="display: none;"></video>
+      </div>
+      <div class="admin-controls" id="ctrl-4">
+        <label for="input-v-4" class="admin-btn">Video Seç</label>
+        <button class="admin-btn btn-danger" onclick="clearMedia(4)">Kaldır</button>
+      </div>
+      <input type="file" id="input-v-4" accept="video/*" style="display: none;" onchange="uploadVideo(this)">
+      <span class="page-badge">4 / 4</span>
+    </div>
+
+  </div>
+
+  <!-- INSTAGRAM GÖSTERGE NOKTALARI -->
+  <div class="slider-dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<!-- KİLİTLEME BUTONU (YÖNETİCİ AÇIKKEN GÖRÜNÜR) -->
+<div id="lock-action-bar" style="max-width: 420px; margin: 15px auto; padding: 0 12px;">
+  <button onclick="lockSystem()" style="width: 100%; background: #d4af37; color: #000; font-weight: bold; border: none; padding: 13px; border-radius: 8px; font-size: 14px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.6);">
+    🔒 Fotoğrafları Kaydet ve Ziyaretçilere Kilitle
+  </button>
+</div>
+
+<style>
+  /* Eski butonları ve alt küçük resimleri gizler */
+  .thumbnails, .thumbnail-list, [class*="thumb"] {
+    display: none !important;
+  }
+
+  /* Ana Instagram Çerçevesi */
+  .qulis-slider-frame {
+    width: 90%;
+    max-width: 420px;
+    height: 480px;
+    margin: 15px auto;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  /* Akıcı Parmakla Kaydırma Alanı */
+  .qulis-carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .qulis-carousel::-webkit-scrollbar { display: none; }
+  .qulis-carousel { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Her Bir Slide */
+  .qulis-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    position: relative;
+    background: #0a0a0a;
+  }
+
+  .media-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .media-box img, .media-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .empty-hint {
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px dashed #d4af37;
+    padding: 10px 16px;
+    border-radius: 6px;
+    pointer-events: none;
+  }
+
+  /* Alt Kontrol Butonları (Ekle / Kaldır) */
+  .admin-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 6;
+  }
+
+  .admin-btn {
+    background: rgba(0, 0, 0, 0.85);
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 7px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-danger {
+    color: #ff4444;
+    border-color: #ff4444;
+  }
+
+  /* Sağ Üst Sayaç */
+  .page-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #d4af37;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Kaydırma Noktaları */
+  .slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: 0.3s;
+  }
+  .dot.active { background: #d4af37; width: 16px; border-radius: 4px; }
+</style>
+
+<script>
+  // IndexedDB (Videoların ve resimlerin telefonda kasmadan kalıcı saklanması için)
+  const DB_NAME = "QulisSliderDB";
+  function openDB(callback) {
+    const request = indexedDB.open(DB_NAME, 1);
+    request.onupgradeneeded = (e) => e.target.result.createObjectStore("store");
+    request.onsuccess = (e) => callback(e.target.result);
+  }
+  function putData(key, value) {
+    openDB((db) => {
+      const tx = db.transaction("store", "readwrite");
+      tx.objectStore("store").put(value, key);
+    });
+  }
+  function getData(key, callback) {
+    openDB((db) => {
+      const tx = db.transaction("store", "readonly");
+      const req = tx.objectStore("store").get(key);
+      req.onsuccess = () => callback(req.result);
+    });
+  }
+  function removeData(key) {
+    openDB((db) => {
+      const tx = db.transaction("store", "readwrite");
+      tx.objectStore("store").delete(key);
+    });
+  }
+
+  // Fotoğraf Yükleme (Canvas ile otomatik optimize eder)
+  function uploadImage(input, index) {
+    const file = input.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        const MAX = 900;
+        const scale = MAX / img.width;
+        canvas.width = (img.width > MAX) ? MAX : img.width;
+        canvas.height = (img.width > MAX) ? (img.height * scale) : img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const data = canvas.toDataURL('image/jpeg', 0.85);
+
+        renderImg(index, data);
+        putData("media_" + index, data);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // Video Yükleme
+  function uploadVideo(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    putData("media_4", file);
+    const url = URL.createObjectURL(file);
+    renderVid(url);
+  }
+
+  function renderImg(index, src) {
+    const el = document.getElementById('img-view-' + index);
+    el.src = src;
+    el.style.display = 'block';
+    document.getElementById('hint-' + index).style.display = 'none';
+  }
+
+  function renderVid(src) {
+    const vid = document.getElementById('vid-view-4');
+    vid.src = src;
+    vid.style.display = 'block';
+    document.getElementById('hint-4').style.display = 'none';
+  }
+
+  // Medya Kaldırma
+  function clearMedia(index) {
+    removeData("media_" + index);
+    if (index === 4) {
+      const vid = document.getElementById('vid-view-4');
+      vid.pause();
+      vid.removeAttribute('src');
+      vid.load();
+      vid.style.display = 'none';
+      document.getElementById('hint-4').style.display = 'block';
+      document.getElementById('input-v-4').value = "";
+    } else {
+      const img = document.getElementById('img-view-' + index);
+      img.src = "";
+      img.style.display = 'none';
+      document.getElementById('hint-' + index).style.display = 'block';
+      document.getElementById('input-f-' + index).value = "";
+    }
+  }
+
+  // KİLİTLEME SİSTEMİ
+  function lockSystem() {
+    localStorage.setItem('qulis_status_locked', 'true');
+    applyLockState();
+    alert("Tüm medyalar kilitlendi! Ziyaretçiler artık butonları göremez.");
+  }
+
+  function applyLockState() {
+    const isLocked = localStorage.getItem('qulis_status_locked') === 'true';
+    const lockBar = document.getElementById('lock-action-bar');
+    
+    if (isLocked) {
+      if (lockBar) lockBar.style.display = 'none';
+      for (let i = 1; i <= 4; i++) {
+        const ctrl = document.getElementById('ctrl-' + i);
+        if (ctrl) ctrl.style.display = 'none';
+        const hint = document.getElementById('hint-' + i);
+        if (hint) hint.style.display = 'none';
+      }
+    } else {
+      if (lockBar) lockBar.style.display = 'block';
+      for (let i = 1; i <= 4; i++) {
+        const ctrl = document.getElementById('ctrl-' + i);
+        if (ctrl) ctrl.style.display = 'flex';
+        // Eğer görsel yoksa hint yazısı görünsün
+        const view = (i === 4) ? document.getElementById('vid-view-4') : document.getElementById('img-view-' + i);
+        if (view && (!view.src || view.style.display === 'none')) {
+          const hint = document.getElementById('hint-' + i);
+          if (hint) hint.style.display = 'block';
+        }
+      }
+    }
+  }
+
+  // 4 KEZ LOGOYA TIKLAYIP 1234 ŞİFRESİYLE KİLİT AÇMA
+  let clickCounter = 0;
+  let clickTimeout = null;
+
+  function setupAdminUnlock() {
+    // Sayfadaki QULIS logosunu veya başlığını bul
+    const logoEl = Array.from(document.querySelectorAll('h1, header, div, span')).find(
+      el => el.textContent.trim().toUpperCase() === 'QULIS.' || el.textContent.trim().toUpperCase() === 'QULIS'
+    );
+
+    if (logoEl) {
+      logoEl.style.cursor = 'pointer';
+      logoEl.addEventListener('click', () => {
+        clickCounter++;
+        clearTimeout(clickTimeout);
+        clickTimeout = setTimeout(() => { clickCounter = 0; }, 1500);
+
+        if (clickCounter >= 4) {
+          clickCounter = 0;
+          const password = prompt("Yönetici Şifresini Girin:");
+          if (password === "1234") {
+            localStorage.setItem('qulis_status_locked', 'false');
+            applyLockState();
+            alert("Kilit açıldı! Fotoğraf ve videoları güncelleyebilirsiniz.");
+          } else if (password !== null) {
+            alert("Hatalı şifre!");
+          }
+        }
+      });
+    }
+  }
+
+  // Sayfa Açılışında Çalışan Kısım
+  window.addEventListener('DOMContentLoaded', () => {
+    // Fotoğrafları yükle
+    for (let i = 1; i <= 3; i++) {
+      ((idx) => {
+        getData("media_" + idx, (res) => {
+          if (res) renderImg(idx, res);
+        });
+      })(i);
+    }
+
+    // Videoyu yükle
+    getData("media_4", (fileBlob) => {
+      if (fileBlob) {
+        const blobUrl = URL.createObjectURL(fileBlob);
+        renderVid(blobUrl);
+      }
+    });
+
+    applyLockState();
+    setupAdminUnlock();
+
+    // Instagram Noktalarını Kaydırmaya Bağlama
+    const carousel = document.getElementById('qulisCarousel');
+    const dots = document.querySelectorAll('.dot');
+    carousel.addEventListener('scroll', () => {
+      const activeIdx = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIdx);
+      });
+    });
+  });
+</script>
+
+                </>
+            </>
+        </>
+    </section>
+
+    <!-- Menü & Kategoriler -->
+    <section class="menu-section" id="kategoriler">
+        <div class="section-header">
+            <span class="tagline">Seçkin Seçenekler</span>
+            <h2>Gastronomi Koleksiyonu</h2>
+            <div class="divider-gold"></div>
+        </div>
+
+        <!-- Canlı Arama -->
+        <div class="search-wrapper">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="menuSearch" placeholder="Aradığınız lezzeti veya kahveyi yazın...">
+            </div>
+        </div>
+
+        <!-- Kategori Vitrini -->
+        <div class="category-showcase">
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-kahvalti')">
+                <span class="cat-box-title">Kahvaltı</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-burger')">
+                <span class="cat-box-title">Burgerler</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-tatli')">
+                <span class="cat-box-title">Tatlılar</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-pizza')">
+                <span class="cat-box-title">Pizzalar</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-dunyakahve')">
+                <span class="cat-box-title">Dünya Kahveleri</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1587080413959-06b859fb107d?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-turkkahve')">
+                <span class="cat-box-title">Türk Kahveleri</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-sogukkahve')">
+                <span class="cat-box-title">Soğuk Kahve & Frappe</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-mojito')">
+                <span class="cat-box-title">Frozen & Mojito</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-canvas')">
+                <span class="cat-box-title">Et Yemekleri</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-tavuk')">
+                <span class="cat-box-title">Tavuklar</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1621996346565-e3d5d6281691?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-makarna')">
+                <span class="cat-box-title">Makarnalar</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1567620832903-9fc6debc209f?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-aparatif')">
+                <span class="cat-box-title">Aparatifler</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-softicecek')">
+                <span class="cat-box-title">Soft İçecekler</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-cay')">
+                <span class="cat-box-title">Çaylar</span>
+            </div>
+            <div class="cat-box" style="background-image: url('https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=600&auto=format&fit=crop');" onclick="selectCategory('sec-nargile')">
+                <span class="cat-box-title">Nargile</span>
+            </div>
+        </div>
+
+        <!-- ================= LİSTELER ================= -->
+
+        <!-- 1. KAHVALTI -->
+        <div class="menu-category-block" id="sec-kahvalti">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Kahvaltı Seçenekleri</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kişi Başı Kahvaltı</div>
+                        <div class="item-desc">Yöresel peynirler, özel reçeller, zeytin çeşitleri ve sıcak ikramlar</div>
+                    </div>
+                    <div class="item-price">500 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kahvaltı Tabağı</div>
+                        <div class="item-desc">Çıtır patates, taze söğüş yeşillik ve doyurucu kahvaltı seçkisi</div>
+                    </div>
+                    <div class="item-price">450 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Menemen</div>
+                        <div class="item-desc">Köz lezzetinde domates, biber ve sahanda tereyağlı yumurta</div>
+                    </div>
+                    <div class="item-price">220 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Karışık Omlet</div>
+                        <div class="item-desc">Sucuk, kaşar peyniri ve bahçe sebzelerinin dengesi</div>
+                    </div>
+                    <div class="item-price">160 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sucuklu Omlet</div>
+                        <div class="item-desc">Özel kasap sucuğu dilimleriyle harmanlanmış</div>
+                    </div>
+                    <div class="item-price">150 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kaşarlı Omlet</div>
+                        <div class="item-desc">Akışkan erimiş taze kaşar peyniri dokunuşu</div>
+                    </div>
+                    <div class="item-price">125 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sade Omlet</div>
+                        <div class="item-desc">Hafif ve kabarık kıvamda klasik tereyağlı sunum</div>
+                    </div>
+                    <div class="item-price">100 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. BURGERLER -->
+        <div class="menu-category-block" id="sec-burger">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Gurme Burgerler</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Double Klasik Doyurucu Menü</div>
+                        <div class="item-desc">Çift kat dana köftesi, çıtır patates ve meşrubat ile</div>
+                    </div>
+                    <div class="item-price">550 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Qulis Çıtır Tavuk Burger Menü</div>
+                        <div class="item-desc">Özel baharatlarla pane edilmiş çıtır tavuk, patates ve içecek</div>
+                    </div>
+                    <div class="item-price">475 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Qulis Special Burger Menü</div>
+                        <div class="item-desc">Şefin özel sosu, karamelize soğan, patates ve içecek</div>
+                    </div>
+                    <div class="item-price">475 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Cheeseburger Menü</div>
+                        <div class="item-desc">Eritilmiş cheddar peyniri, patates kızartması ve içecek</div>
+                    </div>
+                    <div class="item-price">440 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Hamburger Menü</div>
+                        <div class="item-desc">Klasik burger köftesi, patates kızartması ve içecek</div>
+                    </div>
+                    <div class="item-price">420 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Chicken Burger Menü</div>
+                        <div class="item-desc">Tavuk köftesi, yeşillikler, patates ve içecek</div>
+                    </div>
+                    <div class="item-price">390 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Hamburger (İçeceksiz)</div>
+                        <div class="item-desc">Çıtır patates kızartması eşliğinde tek menü</div>
+                    </div>
+                    <div class="item-price">370 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Cheeseburger (İçeceksiz)</div>
+                        <div class="item-desc">Çıtır patates kızartması eşliğinde servis edilir</div>
+                    </div>
+                    <div class="item-price">370 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Öğrenci Hamburger Menü</div>
+                        <div class="item-desc">Patates kızartması ve soft içecek ile</div>
+                    </div>
+                    <div class="item-price">370 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Çocuk Hamburger Menü</div>
+                        <div class="item-desc">Patates kızartması ve soft içecek ile</div>
+                    </div>
+                    <div class="item-price">370 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Cheeseburger (Porsiyon)</div>
+                        <div class="item-desc">Tek porsiyon nefis cheeseburger</div>
+                    </div>
+                    <div class="item-price">370 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Chicken Burger (İçeceksiz)</div>
+                        <div class="item-desc">Patates kızartması ile servis edilir</div>
+                    </div>
+                    <div class="item-price">340 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Hamburger (Porsiyon)</div>
+                        <div class="item-desc">Tek porsiyon klasik hamburger</div>
+                    </div>
+                    <div class="item-price">340 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. TATLILAR -->
+        <div class="menu-category-block" id="sec-tatli">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Tatlılar & Belçika Çikolatası</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Belçika Çikolatalı San Sebastian</div>
+                        <div class="item-desc">Akışkan kıvamlı yanık cheesecake, sıcak eritilmiş orijinal Belçika çikolatası</div>
+                    </div>
+                    <div class="item-price">375 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Belçika Çikolatalı Waffle</div>
+                        <div class="item-desc">Taze meyveler, fındık/fıstık dokunuşu ve yoğun Belçika çikolatası</div>
+                    </div>
+                    <div class="item-price">375 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Meyve Tabağı (Çift Kişilik)</div>
+                        <div class="item-desc">Mevsimin en seçkin meyvelerinden hazırlanan taze sunum</div>
+                    </div>
+                    <div class="item-price">350 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kalpli Pasta</div>
+                        <div class="item-desc">Zarif kremalı ve kırmızı orman meyveli özel tasarım pasta</div>
+                    </div>
+                    <div class="item-price">350 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Qulis Waffle</div>
+                        <div class="item-desc">Şefin özel harman sosları ve zengin meyve kombini</div>
+                    </div>
+                    <div class="item-price">325 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">San Sebastian Cheesecake</div>
+                        <div class="item-desc">Geleneksel Bask tarzı fırınlanmış sade lezzet</div>
+                    </div>
+                    <div class="item-price">320 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Klasik Waffle</div>
+                        <div class="item-desc">Çilek, muz ve kakao sosunun kusursuz uyumu</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Fil Dişi Waffle</div>
+                        <div class="item-desc">Beyaz çikolatanın ipeksi lezzetiyle tatlandırılmış</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sıcak Çikolatalı Sufle</div>
+                        <div class="item-desc">Fırından yeni çıkmış akışkan çikolatalı sıcak lezzet</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Fıstık Rüyası</div>
+                        <div class="item-desc">Bol Antep fıstıklı yoğun katmanlar</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Lotus Bisküvili Pasta</div>
+                        <div class="item-desc">Karamelize bisküvi sosu ve ipeksi krema</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kırmızı Meyveli Cheesecake</div>
+                        <div class="item-desc">Ferahlatıcı orman meyveleri püresi ile dengeli tat</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Tiramisu</div>
+                        <div class="item-desc">Hakiki espresso aroması ve mascarpone yumuşaklığı</div>
+                    </div>
+                    <div class="item-price">275 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Berry Hibiscus Pasta</div>
+                        <div class="item-desc">Hibiskus çiçeği özü ve taze böğürtlen notaları</div>
+                    </div>
+                    <div class="item-price">275 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Dondurma Porsiyon</div>
+                        <div class="item-desc">Özel dondurma çeşitlerinden oluşan şık kase sunumu</div>
+                    </div>
+                    <div class="item-price">250 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Limonlu Cheesecake</div>
+                        <div class="item-desc">Ferahlatıcı Akdeniz limonu soslu</div>
+                    </div>
+                    <div class="item-price">240 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Frambuazlı Cheesecake</div>
+                        <div class="item-desc">Taze frambuaz taneleriyle tatlandırılmış</div>
+                    </div>
+                    <div class="item-price">240 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Magnolya (Çilek / Muz)</div>
+                        <div class="item-desc">Hafif süt kreması ve taze meyve dilimleri</div>
+                    </div>
+                    <div class="item-price">230 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Geleneksel Fırın Sütlaç</div>
+                        <div class="item-desc">Fırında üzeri nar gibi kızartılmış hafif tatlı</div>
+                    </div>
+                    <div class="item-price">230 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ekstra Belçika Çikolatası</div>
+                        <div class="item-desc">Tatlılarınız için ilave sıcak sos kabı</div>
+                    </div>
+                    <div class="item-price">100 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Dondurma (Tek Top)</div>
+                        <div class="item-desc">Oreo, Limon, Vanilya, Antep Fıstığı, Çilek veya Kakao</div>
+                    </div>
+                    <div class="item-price">75 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. PİZZALAR -->
+        <div class="menu-category-block" id="sec-pizza">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> İtalyan Usulü Pizzalar</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kavurmalı Pizza Menü</div>
+                        <div class="item-desc">Özel marine kavurma, patates kızartması ve içecek ile</div>
+                    </div>
+                    <div class="item-price">570 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kavurmalı Pizza</div>
+                        <div class="item-desc">İnce çıtır hamur, bol mozzarella ve lokum kavurma eti</div>
+                    </div>
+                    <div class="item-price">470 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ton Balıklı Pizza Menü</div>
+                        <div class="item-desc">Ton balığı, patates kızartması ve soft içecek ile</div>
+                    </div>
+                    <div class="item-price">450 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Margarita Pizza Menü</div>
+                        <div class="item-desc">Patates kızartması ve soft içecek ile</div>
+                    </div>
+                    <div class="item-price">440 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Dört Peynirli Pizza Menü</div>
+                        <div class="item-desc">Patates kızartması ve soft içecek ile</div>
+                    </div>
+                    <div class="item-price">440 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Karışık Pizza (Büyük Boy)</div>
+                        <div class="item-desc">Sucuk, sosis, taze mantar, mısır, zeytin ve biber</div>
+                    </div>
+                    <div class="item-price">440 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ton Balıklı Pizza</div>
+                        <div class="item-desc">Akdeniz ton balığı, mor soğan, kapari ve mısır</div>
+                    </div>
+                    <div class="item-price">350 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Karışık Pizza</div>
+                        <div class="item-desc">Geleneksel bol malzemeli harman</div>
+                    </div>
+                    <div class="item-price">340 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sezar Pizza</div>
+                        <div class="item-desc">Tavuk göğsü dilimleri ve Sezar sos dokunuşu</div>
+                    </div>
+                    <div class="item-price">340 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Dört Peynirli Pizza</div>
+                        <div class="item-desc">Mozzarella, parmesan ve seçkin eritme peynirleri</div>
+                    </div>
+                    <div class="item-price">340 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Margarita Pizza</div>
+                        <div class="item-desc">Taze domates sosu, fesleğen ve bol mozzarella</div>
+                    </div>
+                    <div class="item-price">320 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. DÜNYA KAHVELERİ -->
+        <div class="menu-category-block" id="sec-dunyakahve">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Barista & Dünya Kahveleri</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">White Chocolate Mocha</div>
+                        <div class="item-desc">Beyaz Belçika çikolatası, çift shot espresso ve buharla işlenmiş süt</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Latte Macchiato (Fındık / Çikolata)</div>
+                        <div class="item-desc">İpeksi süt köpüğü ve katmanlı espresso sunumu</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Aromalı Americano (Fındık / Karamel)</div>
+                        <div class="item-desc">Özel şuruplarla tatlandırılmış sıcak Americano</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Filtre Kahve (Sütlü)</div>
+                        <div class="item-desc">Taze çekirdekten demlenen kahveye sıcak kadife süt</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Gold Kahve (Sütlü)</div>
+                        <div class="item-desc">Sütlü sıcak klasik kahve servisi</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Red Eye (Filtre + Espresso Shot)</div>
+                        <div class="item-desc">Günün enerjisini yükselten yoğun kafeinli özel harman</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Coffee Mocha</div>
+                        <div class="item-desc">Yoğun bitter kakao, espresso ve krema dokusu</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Caramel Latte</div>
+                        <div class="item-desc">Karamel sosu ve yumuşak içimli süt kahvesi</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Taze Demleme Filtre Kahve</div>
+                        <div class="item-desc">Orta kavrum çekirdeklerden berrak ve aromatik demleme</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Double Espresso</div>
+                        <div class="item-desc">Altın renkli kremasıyla çift shot yoğun espresso</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Espresso Con Panna</div>
+                        <div class="item-desc">Espresso üzerine soğuk krema tepeciği</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Americano Sütlü</div>
+                        <div class="item-desc">Hafif süt dokunuşuyla yumuşatılmış Americano</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Gold Kahve (Sade)</div>
+                        <div class="item-desc">Klasik sıcak kahve servisi</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Caffe Latte</div>
+                        <div class="item-desc">Espresso ve bol buharlanmış sütün kadifemsi dengesi</div>
+                    </div>
+                    <div class="item-price">170 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Caffe Americano</div>
+                        <div class="item-desc">Sıcak su ile açılmış zengin gövdeli espresso</div>
+                    </div>
+                    <div class="item-price">170 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Espresso / Macchiato</div>
+                        <div class="item-desc">Tek shot espresso veya bir kaşık süt köpüklü macchiato</div>
+                    </div>
+                    <div class="item-price">170 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. TÜRK KAHVELERİ -->
+        <div class="menu-category-block" id="sec-turkkahve">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Geleneksel Türk Kahveleri</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Tarz-ı Hususi</div>
+                        <div class="item-desc">Geleneksel fincanda özel ateşte pişirilmiş ağır demleme lezzet</div>
+                    </div>
+                    <div class="item-price">130 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Double Türk Kahvesi</div>
+                        <div class="item-desc">Büyük fincanda bol köpüklü kahve keyfi</div>
+                    </div>
+                    <div class="item-price">130 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sütlü Türk Kahvesi</div>
+                        <div class="item-desc">Su yerine taze süt ile pişirilmiş yumuşak içim</div>
+                    </div>
+                    <div class="item-price">120 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Taş Dibek Kahvesi</div>
+                        <div class="item-desc">Havanlarda dövülmüş aromatik bitki ve kakule dokunuşlu</div>
+                    </div>
+                    <div class="item-price">120 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Menengiç Kahvesi</div>
+                        <div class="item-desc">Yabani fıstık meyvesinden, doğal ve kafeinsiz</div>
+                    </div>
+                    <div class="item-price">120 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Klasik Türk Kahvesi</div>
+                        <div class="item-desc">Lokum ve su ikramı ile geleneksel sunum</div>
+                    </div>
+                    <div class="item-price">100 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. SOĞUK KAHVELER & FRAFFE -->
+        <div class="menu-category-block" id="sec-sogukkahve">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Soğuk Kahveler & Frappe</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Oreo Frappe</div>
+                        <div class="item-desc">Kırılmış Oreo parçaları, krema ve buzlu frappe</div>
+                    </div>
+                    <div class="item-price">230 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ocean Ice Latte</div>
+                        <div class="item-desc">Özel mavi Akdeniz şurubu, soğuk süt ve espresso katmanları</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice White Chocolate Mocha</div>
+                        <div class="item-desc">Beyaz çikolata, buz, soğuk süt ve espresso</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice Mocha</div>
+                        <div class="item-desc">Buzlu bitter çikolata soslu espresso</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice Caffe Latte</div>
+                        <div class="item-desc">Buzlu taze süt ve espresso dengesi</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Caramel Ice Latte</div>
+                        <div class="item-desc">Karamelli soğuk latte ferahlığı</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice Vanilla Latte</div>
+                        <div class="item-desc">Vanilya aromasıyla tatlandırılmış soğuk latte</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice Americano</div>
+                        <div class="item-desc">Buz ve soğuk su üzerinde süzülen çift espresso</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Karamelli Frappe</div>
+                        <div class="item-desc">Yoğun köpüklü karamel aromalı buzlu kahve</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Fındıklı Ice Chocolate</div>
+                        <div class="item-desc">Fındık kremalı buzlu çikolata keyfi</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Muzlu Ice White Chocolate</div>
+                        <div class="item-desc">Muz püresi ve beyaz çikolatalı soğuk süt</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice White Chocolate</div>
+                        <div class="item-desc">Buzlu beyaz çikolata içeceği</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Klasik Frappe</div>
+                        <div class="item-desc">Buz ve köpüklü soğuk kahve klasiği</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Çikolatalı Frappe</div>
+                        <div class="item-desc">Çikolata sosuyla zenginleştirilmiş buzlu kahve</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Cold Brew</div>
+                        <div class="item-desc">16 saat boyunca damla damla demlenmiş ipeksi soğuk kahve</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice Coffee</div>
+                        <div class="item-desc">Sade ve ferahlatıcı klasik soğuk kahve</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ice Chocolate</div>
+                        <div class="item-desc">Gerçek eritme çikolatanın soğuk sütle dansı</div>
+                    </div>
+                    <div class="item-price">180 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. FROZEN VE MOJİTO -->
+        <div class="menu-category-block" id="sec-mojito">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Frozen & Mojito</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Red Bull Mojito</div>
+                        <div class="item-desc">Taze nane yaprakları, lime ve Red Bull enerjisi</div>
+                    </div>
+                    <div class="item-price">270 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Frozen Kokteyller</div>
+                        <div class="item-desc">Orman Meyveli, Ekşi Elma, Limon veya Spesiyal harman</div>
+                    </div>
+                    <div class="item-price">240 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Taze Sıkılmış Portakal Suyu</div>
+                        <div class="item-desc">Akdeniz bahçelerinden günlük taze sıkım</div>
+                    </div>
+                    <div class="item-price">200 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Yeşil Elma Mojito</div>
+                        <div class="item-desc">Ekşi elma püresi, nane ve mineral ferahlığı</div>
+                    </div>
+                    <div class="item-price">200 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Karpuz Mojito</div>
+                        <div class="item-desc">Taze karpuz aroması ve buzlu nane yaprakları</div>
+                    </div>
+                    <div class="item-price">200 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Çilekli Mojito</div>
+                        <div class="item-desc">Ezilmiş tatlı çilekler ve lime dengesi</div>
+                    </div>
+                    <div class="item-price">200 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Klasik Mojito</div>
+                        <div class="item-desc">Esmer şeker, ezilmiş nane yaprakları, lime suyu ve soda</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Yeşil Elma Dondurmalı Limonata</div>
+                        <div class="item-desc">Elma limonata üzerine kremsi dondurma tepeciği</div>
+                    </div>
+                    <div class="item-price">190 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Yeşil Elma Naneli Limonata</div>
+                        <div class="item-desc">Ekşi ve ferah lezzetlerin buluşması</div>
+                    </div>
+                    <div class="item-price">160 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Yeşil Elma Limonata</div>
+                        <div class="item-desc">Doğal elma özü ile tatlandırılmış el yapımı limonata</div>
+                    </div>
+                    <div class="item-price">160 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Naneli Ev Limonatası</div>
+                        <div class="item-desc">Taze sıkılmış limon suyu ve bol nane yaprağı</div>
+                    </div>
+                    <div class="item-price">160 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Çilekli Ev Limonatası</div>
+                        <div class="item-desc">Gerçek çilek suyuyla renklendirilmiş ferahlık</div>
+                    </div>
+                    <div class="item-price">160 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Geleneksel Ev Limonatası</div>
+                        <div class="item-desc">Doğal limon kabuğu yağıyla demlenmiş klasik tarif</div>
+                    </div>
+                    <div class="item-price">150 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Muzlu Ballı Süt</div>
+                        <div class="item-desc">Doğal yayla balı ve taze muzlu besleyici süt</div>
+                    </div>
+                    <div class="item-price">150 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. ET YEMEKLERİ -->
+        <div class="menu-category-block" id="sec-canvas">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Izgaralar & Et Yemekleri</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Special Karışık Izgara</div>
+                        <div class="item-desc">Marine edilmiş dana biftek, köfte, kuzu pirzola ve közlenmiş garnitürler</div>
+                    </div>
+                    <div class="item-price">800 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Döküm Tavada Et Fajita</div>
+                        <div class="item-desc">Cızırdayan döküm tavada sotelenmiş jülyen et dilimleri, biberler ve 3 özel sos</div>
+                    </div>
+                    <div class="item-price">550 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Özel Kasap Köfte</div>
+                        <div class="item-desc">Kömür ateşinde pişmiş kasap köftesi, tereyağlı pilav ve çıtır patates</div>
+                    </div>
+                    <div class="item-price">550 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Bodrum Usulü Et Çökertme</div>
+                        <div class="item-desc">Çıtır kibrit patates yatağında süzme yoğurt, marine dana bonfile ve tereyağı sos</div>
+                    </div>
+                    <div class="item-price">550 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Geleneksel Sac Kavurma (Et)</div>
+                        <div class="item-desc">Kızgın sacda arpacık soğan ve domatesle sotelenmiş lokum et</div>
+                    </div>
+                    <div class="item-price">550 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Gurme Et Wrap</div>
+                        <div class="item-desc">İnce lavaş içinde marine et dilimleri, sote mantar ve eritilmiş kaşar</div>
+                    </div>
+                    <div class="item-price">500 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Pilav Üstü Döner</div>
+                        <div class="item-desc">Geleneksel pilav ve çıtır patates kızartması eşliğinde</div>
+                    </div>
+                    <div class="item-price">425 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. TAVUKLAR -->
+        <div class="menu-category-block" id="sec-tavuk">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Tavuklar</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Parmesan Peynirli Tavuk</div>
+                        <div class="item-desc">Özel çıtır parmesan kabuğuyla fırınlanmış sulu tavuk göğsü</div>
+                    </div>
+                    <div class="item-price">550 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Tavuk Çökertme</div>
+                        <div class="item-desc">Kibrit patatesler üzerinde süzme yoğurt ve soslu tavuk dilimleri</div>
+                    </div>
+                    <div class="item-price">500 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sac Kebap Tavuk</div>
+                        <div class="item-desc">Sac üzerinde taze biber ve domatesle sotelenmiş tavuk eti</div>
+                    </div>
+                    <div class="item-price">500 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Dev Burritoo</div>
+                        <div class="item-desc">Tavuk, patates, soğan halkası, karamelize soğan, mantar ve özel sos</div>
+                    </div>
+                    <div class="item-price">500 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Izgara Tavuk Göğsü</div>
+                        <div class="item-desc">Taze kekik ve zeytinyağıyla marine edilmiş sağlıklı ızgara lezzet</div>
+                    </div>
+                    <div class="item-price">475 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Köri Soslu Tavuk</div>
+                        <div class="item-desc">Kremalı Hint köri sosu, taze mantar ve jülyen tavuk parçaları</div>
+                    </div>
+                    <div class="item-price">475 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kremalı Mantarlı Tavuk</div>
+                        <div class="item-desc">Taze dağ kekiği, yoğun krema ve kültür mantarları eşliğinde</div>
+                    </div>
+                    <div class="item-price">475 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Yoğurtlu Tavuk Wrap</div>
+                        <div class="item-desc">Özel yoğurt sosla harmanlanmış enfes tavuk dürüm</div>
+                    </div>
+                    <div class="item-price">475 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. MAKARNALAR -->
+        <div class="menu-category-block" id="sec-makarna">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Makarnalar</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Dört Peynirli Hafif Acılı Penne</div>
+                        <div class="item-desc">Gorgonzola, parmesan, mozzarella ve hafif acı dengesi</div>
+                    </div>
+                    <div class="item-price">340 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Köri Soslu Tavuklu Makarna</div>
+                        <div class="item-desc">Jülyen tavuk parçaları, mantar ve kremalı köri sosu</div>
+                    </div>
+                    <div class="item-price">330 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kremalı Tavuklu Penne</div>
+                        <div class="item-desc">Yoğun süt kreması, tavuk ve taze fesleğen dokunuşu</div>
+                    </div>
+                    <div class="item-price">330 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Fettuccine Alfredo</div>
+                        <div class="item-desc">Taze kültür mantarları, tereyağı ve rendelenmiş parmesan</div>
+                    </div>
+                    <div class="item-price">330 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Penne All'Arrabbiata</div>
+                        <div class="item-desc">Acılı domates sosu, siyah zeytin dilimleri ve sarımsak</div>
+                    </div>
+                    <div class="item-price">320 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Pesto Soslu Tavuklu Penne</div>
+                        <div class="item-desc">Cevizli fesleğen pesto sosu ve ızgara tavuk parçaları</div>
+                    </div>
+                    <div class="item-price">320 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kayseri Usulü El Mantısı</div>
+                        <div class="item-desc">Sarımsaklı süzme yoğurt, nane ve kızgın tereyağlı pul biber sosu</div>
+                    </div>
+                    <div class="item-price">300 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. APARATİFLER -->
+        <div class="menu-category-block" id="sec-aparatif">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Aparatifler</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kavurmalı Kaşarlı Gözleme</div>
+                        <div class="item-desc">El açması sac yufkası, çıtır patates ve zeytin söğüş eşliğinde</div>
+                    </div>
+                    <div class="item-price">320 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ayvalık Tostu</div>
+                        <div class="item-desc">Özel ekmeğinde kasap sucuğu, sosis, kaşar ve Rus salatası</div>
+                    </div>
+                    <div class="item-price">270 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sucuklu Kaşarlı Gözleme</div>
+                        <div class="item-desc">Çıtır yufka, kızarmış patates ve söğüş tabağı ile</div>
+                    </div>
+                    <div class="item-price">240 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kaşarlı Gözleme</div>
+                        <div class="item-desc">Bol erimiş kaşar peyniri ve tereyağı lezzeti</div>
+                    </div>
+                    <div class="item-price">220 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Karışık Tost</div>
+                        <div class="item-desc">Sucuk ve kaşarın klasik ve leziz uyumu</div>
+                    </div>
+                    <div class="item-price">220 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sucuklu Tost</div>
+                        <div class="item-desc">Özel tost ekmeğinde kızarmış sucuk dilimleri</div>
+                    </div>
+                    <div class="item-price">210 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kaşarlı Tost</div>
+                        <div class="item-desc">Eritilmiş taze kaşarlı sıcak tost</div>
+                    </div>
+                    <div class="item-price">200 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Çıtır Sigara Böreği</div>
+                        <div class="item-desc">Peynirli çıtır sarılmış geleneksel börek porsiyonu</div>
+                    </div>
+                    <div class="item-price">150 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Altın Soğan Halkaları</div>
+                        <div class="item-desc">Çıtır pane harcıyla kızartılmış özel soğan halkaları</div>
+                    </div>
+                    <div class="item-price">150 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Ekstra Kasap Sucuk</div>
+                        <div class="item-desc">Tost veya tabaklar için ekstra sucuk porsiyonu</div>
+                    </div>
+                    <div class="item-price">130 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Sıcak Taze Pişi (1 Adet)</div>
+                        <div class="item-desc">Altın sarısı kabarmış sıcak pişi</div>
+                    </div>
+                    <div class="item-price">70 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. SOFT İÇECEKLER -->
+        <div class="menu-category-block" id="sec-softicecek">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Soft İçecekler</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Red Bull Enerji İçeceği</div>
+                        <div class="item-desc">Soğuk servis kutu (250 ml)</div>
+                    </div>
+                    <div class="item-price">150 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Churchill</div>
+                        <div class="item-desc">Doğal maden suyu, taze sıkılmış limon suyu ve kaya tuzu</div>
+                    </div>
+                    <div class="item-price">120 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Coca Cola / Zero</div>
+                        <div class="item-desc">Kutu soğuk meşrubat</div>
+                    </div>
+                    <div class="item-price">90 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Pepsi / Pepsi Max</div>
+                        <div class="item-desc">Kutu soğuk meşrubat</div>
+                    </div>
+                    <div class="item-price">90 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Fanta & Sprite</div>
+                        <div class="item-desc">Kutu meşrubat çeşitleri</div>
+                    </div>
+                    <div class="item-price">90 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Lipton Soğuk Çay</div>
+                        <div class="item-desc">Şeftali, Limon, Mango veya Karpuz seçenekleri</div>
+                    </div>
+                    <div class="item-price">90 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Meyveli Maden Suyu</div>
+                        <div class="item-desc">Farklı meyve aromalı zengin mineralli soda</div>
+                    </div>
+                    <div class="item-price">60 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Doğal Maden Suyu</div>
+                        <div class="item-desc">Zengin mineralli sade soda</div>
+                    </div>
+                    <div class="item-price">50 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Kaynak Suyu</div>
+                        <div class="item-desc">Soğuk pet şişe su</div>
+                    </div>
+                    <div class="item-price">30 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. ÇAYLAR -->
+        <div class="menu-category-block" id="sec-cay">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Çaylar</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Bitki Çayları (Fincan)</div>
+                        <div class="item-desc">Ihlamur, Nane Limon, Yeşil Çay, Ada Çayı, Kış Çayı</div>
+                    </div>
+                    <div class="item-price">100 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Özel Meyve Çayları</div>
+                        <div class="item-desc">Elma Nane Çayı, Mango Nane Çayı</div>
+                    </div>
+                    <div class="item-price">100 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Nescafe Çeşitleri</div>
+                        <div class="item-desc">Klasik Sade veya Sütlü Köpüklü</div>
+                    </div>
+                    <div class="item-price">100 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Fincan Sıcak Meyve İçecekleri</div>
+                        <div class="item-desc">Kivi, Kakao, Portakal, Karadut veya Elma</div>
+                    </div>
+                    <div class="item-price">80 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Double Çay</div>
+                        <div class="item-desc">Büyük ince belli bardakta taze demlenmiş Türk çayı</div>
+                    </div>
+                    <div class="item-price">50 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Bardak Meyve Aromalı Çaylar</div>
+                        <div class="item-desc">Karadut, Elma, Portakal, Kivi, Kuşburnu, Kakao, Muz</div>
+                    </div>
+                    <div class="item-price">50 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Demleme Türk Çayı</div>
+                        <div class="item-desc">Rize yaylalarından taze harman geleneksel çay</div>
+                    </div>
+                    <div class="item-price">30 ₺</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15. NARGİLE
+      <!-- Fotoğrafı tamamen kaldırıp düz kutu yapmak için: -->
+<div class="menu-card" style="background-color: #1a1a1a;">
+  <span class="title">NARGİLE</span>
+</div>
+
+        <div class="menu-category-block" id="sec-nargile">
+            <div class="category-header">
+                <h3><span class="gold-dot"></span> Nargile</h3>
+                <button class="btn-return-all" onclick="showAllCategories()">Tüm Koleksiyon</button>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">VIP Nargile Kova Menü</div>
+                        <div class="item-desc">Premium Nargile, Cola / Fuse Tea, Meyveli Soda, Red Bull ve Lüks Çerez sunumu</div>
+                    </div>
+                    <div class="item-price">1100 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Klasik Nargile</div>
+                        <div class="item-desc">Dünya çapında seçkin tütün aromalarıyla ustalıkla hazırlanır</div>
+                    </div>
+                    <div class="item-price">400 ₺</div>
+                </div>
+                <div class="menu-item-card">
+                    <div class="item-details">
+                        <div class="item-title">Cappucino Nargile</div>
+                        <div class="item-desc">Kahve severler için özel harman kremalı kahve aromalı tütün</div>
+                    </div>
+                    <div class="item-price">400 ₺</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- İletişim & Lokasyon -->
+    <section class="lounge-contact" id="iletisim">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <span style="color: var(--gold); letter-spacing: 4px; font-size: 0.75rem; text-transform: uppercase;">Ziyaret Edin</span>
+                <h3>Bizi Keşfedin</h3>
+                
+                <div class="info-row">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Lokasyon</strong>
+                        <p>Merkez Mahallesi, Mustafa Deniz Caddesi No: 23A<br>Bozyazı / Mersin</p>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div>
+                        <strong>Instagram</strong>
+                        <p><a href="https://www.instagram.com/quliscafe" target="_blank">@quliscafe</a></p>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Çalışma Saatleri</strong>
+                        <p>Haftanın 7 günü · 09:00 – 01:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-frame">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3230.1066735501865!2d32.955431676344265!3d36.09639597245781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dcba9292df28e9%3A0xe104db1ae5362e6e!2sMerkez%2C%20Mustafa%20Deniz%20Cd.%2C%2033380%20Bozyaz%C4%B1%2FMersin!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/quliscafe" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2026 QULIS CAFE · TÜM HAKLARI SAKLIDIR</p>
+    </footer>
+
+    <!-- Doğrudan Tıklama ve Seçme Scripti -->
+    <script>
+        function triggerDirectUpload() {
+            document.getElementById('photoAddInput').click();
+        }
+
+        function showImage(src, thumbElement) {
+            document.getElementById('activeVideoDisplay').pause();
+            document.getElementById('activeVideoDisplay').style.display = 'none';
+            const img = document.getElementById('activeImageDisplay');
+            img.style.display = 'block';
+            img.src = src;
+
+            document.querySelectorAll('.thumb-box').forEach(t => t.classList.remove('active'));
+            if (thumbElement) thumbElement.classList.add('active');
+        }
+
+        function showVideo(src, thumbElement) {
+            document.getElementById('activeImageDisplay').style.display = 'none';
+            const vid = document.getElementById('activeVideoDisplay');
+            vid.style.display = 'block';
+            vid.src = src;
+            vid.play();
+
+            document.querySelectorAll('.thumb-box').forEach(t => t.classList.remove('active'));
+            if (thumbElement) thumbElement.classList.add('active');
+        }
+
+        function addNewPhotos(event) {
+            const files = event.target.files;
+            if (files && files.length > 0) {
+                const thumbsContainer = document.getElementById('mediaThumbnails');
+                Array.from(files).forEach((file, idx) => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const url = e.target.result;
+                        const box = document.createElement('div');
+                        box.className = 'thumb-box';
+                        box.onclick = function() { showImage(url, this); };
+                        box.innerHTML = `<img src="${url}" alt="QULIS">`;
+                        thumbsContainer.appendChild(box);
+
+                        if (idx === 0) showImage(url, box);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+
+        function addNewVideo(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const videoUrl = e.target.result;
+                    const box = document.createElement('div');
+                    box.className = 'thumb-box video-thumb';
+                    box.onclick = function() { showVideo(videoUrl, this); };
+                    box.innerHTML = `<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=200&auto=format&fit=crop" alt="Video">`;
+                    thumbsContainer.appendChild(box);
+                    showVideo(videoUrl, box);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Kategori Seçme ve Arama
+        function selectCategory(catId) {
+            const blocks = document.querySelectorAll('.menu-category-block');
+            blocks.forEach(block => {
+                if (block.id === catId) {
+                    block.style.display = 'block';
+                    const yOffset = -90;
+                    const y = block.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                } else {
+                    block.style.display = 'none';
+                }
+            });
+        }
+
+        function showAllCategories() {
+            const blocks = document.querySelectorAll('.menu-category-block');
+            blocks.forEach(block => block.style.display = 'block');
+            const target = document.getElementById('kategoriler');
+            const yOffset = -80;
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
+        document.getElementById('menuSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const blocks = document.querySelectorAll('.menu-category-block');
+
+            blocks.forEach(block => {
+                const items = block.querySelectorAll('.menu-item-card');
+                let hasMatch = false;
+
+                items.forEach(item => {
+                    const title = item.querySelector('.item-title').textContent.toLowerCase();
+                    const desc = item.querySelector('.item-desc').textContent.toLowerCase();
+
+                    if (title.includes(query) || desc.includes(query)) {
+                        item.style.display = 'flex';
+                        hasMatch = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                block.style.display = hasMatch ? 'block' : 'none';
+            });
+        });
+    </script>
+    </styl>
+
+    <script>
+      const track = document.getElementById('mediaTrack');
+      const dots = document.querySelectorAll('.dot');
+      if (track) {
+        track.addEventListener('scroll', () => {
+          const pageIndex = Math.round(track.scrollLeft / track.offsetWidth);
+          dots.forEach((dot, idx) => {
+            if (idx === pageIndex) 
+  }
+});
+</>
+
+
+
+  </body>
+</html>
+
+
+
